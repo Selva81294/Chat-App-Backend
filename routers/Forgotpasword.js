@@ -23,7 +23,7 @@ forgotPasswordRouter.post("/", async (req, res) => {
       expiresIn: "15m",
     });
 
-    const link = `http://localhost:8000/api/resetpassword/${oldUser._id}/${token}`;
+    const link = `https://chat-app-backend-zcfs.onrender.com/api/resetpassword/${oldUser._id}/${token}`;
     
     var transporter = nodemailer.createTransport({
       service: "gmail",

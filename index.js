@@ -3,7 +3,7 @@ import cors from "cors"
 import dotenv from "dotenv"
 import {dataBaseConnection} from "./db.js"
 import router from "./routers/index.js"
-import { Server, Socket } from "socket.io";
+import { Server } from "socket.io";
 
 dotenv.config()
 const app = express()
@@ -27,7 +27,7 @@ app.use("/api",router)
 const io = new Server(server, {
     pingTimeout: 60000,
     cors: {
-        origin: "http://localhost:3000"
+        origin: "https://keen-sorbet-c69c44.netlify.app"
     }
 });
 
